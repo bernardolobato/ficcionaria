@@ -11,7 +11,10 @@ import { routingComponents } from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material-module';
-import { HomeComponent } from './components/home/home.component'
+import { HomeComponent } from './components/home/home.component';
+import { PostService } from './services/post.service';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -26,9 +29,10 @@ import { HomeComponent } from './components/home/home.component'
     FormsModule,
     NoopAnimationsModule,
     MaterialModule,
-    ProfileModule
+    ProfileModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ PostService ],
   bootstrap: [AppComponent],
   exports: [HomeComponent]
 })

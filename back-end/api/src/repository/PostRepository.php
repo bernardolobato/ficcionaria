@@ -44,8 +44,12 @@ class PostRepository extends \Repository\AppRepository
             $query->setParameter('status', $params['status']);
         }
 
-        $query->setMaxResults($params['numMaxResults']);
-        $query->setFirstResult($params['offset']);
+        if (isset($params['numMaxResults'])) {
+            $query->setMaxResults($params['numMaxResults']);
+        }
+        if (isset($params['offset'])) {
+            $query->setFirstResult($params['offset']);
+        }
         return $query->getQuery()->getResult();
     }
 }
