@@ -6,7 +6,7 @@ export class Post {
     public text: string;
     public status: string;
     public profile: Profile;
-    private postedAt: Date;
-    private created: Date;
-    private modified: Date;
+    public postedAt: Date;
+    public created: Date;
+    public modified: Date;
 }

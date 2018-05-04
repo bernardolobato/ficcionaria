@@ -15,12 +15,14 @@ import { HomeComponent } from './components/home/home.component';
 import { PostService } from './services/post.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-
+import { HeaderComponent } from './components/layout/header/header.component';
+import { FooterComponent } from './components/Layout/footer/footer.component';
+import { LayoutModule } from './modules/layout/layout.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,9 @@ import { HttpModule } from '@angular/http';
     NoopAnimationsModule,
     MaterialModule,
     ProfileModule,
-    HttpModule
+    HttpModule,
+    RouterModule,
+    LayoutModule
   ],
   providers: [ PostService ],
   bootstrap: [AppComponent],

@@ -25,7 +25,10 @@ $app->group('/posts', function () {
             PostValidator::isValidId($id);
             $postBusiness = $this->get('postBusiness');
             $data = $postBusiness->get($id);
-            $data->profile->name;
+            if (isset($data->profile)) {
+                $data->profile->name;
+            }
+
             $newResponse = $response->withJson($data);
             return $newResponse;
         } catch (AppException $e) {

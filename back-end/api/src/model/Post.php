@@ -31,19 +31,19 @@ class Post
      * @ORM\Column(type="datetime")
      * @var DateTime
      */
-    private $postedAt;
+    public $postedAt;
     
     /**
      * @ORM\Column(type="datetime")
      * @var DateTime
      */
-    private $created;
+    public $created;
 
     /**
      * @ORM\Column(type="datetime")
      * @var DateTime
      */
-    private $modified;
+    public $modified;
 
     public static function fromArray($args) {
         $post = new Post();

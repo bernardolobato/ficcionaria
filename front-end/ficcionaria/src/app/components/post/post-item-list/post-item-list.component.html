@@ -1,0 +1,19 @@
+<article class=" blog-teaser">
+  <header>
+    <!-- img src="img/cat.png" alt="A Cat" -->
+    <h3>
+
+        <a [routerLink]="['/post/visualizar', post.id]">
+          {{post.title}}
+        </a>
+    </h3>
+    <span class="meta">{{post.postedAt.date}}</span>
+    <hr>
+  </header>
+  <div class="body">
+    {{post.text}} </div>
+  <div class="clearfix">
+    
+    <a [routerLink]="['/post/visualizar', post.id]" class="btn btn-tales-one">Read more</a>
+  </div>
+</article>
