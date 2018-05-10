@@ -1,0 +1,19 @@
+.box {
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow:  1px 1px 1px 1px #a8a8a8;
+    padding-top: 0;
+
+    font-size: 16px;
+    line-height: 27px;
+    font-family: 'Open Sans', sans-serif;
+    color: #424142;
+    background-color: #fff;
+}
+
+
+
+.imagemNormal {
+    width: 600px;
+    height: 120px;
+}

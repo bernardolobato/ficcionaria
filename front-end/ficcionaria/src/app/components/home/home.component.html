@@ -1,9 +1,51 @@
 <app-header>
 </app-header>
-<div class="widewrapper main">
-    <div class="container">
-        <div class="row">
-            <app-list-post [posts]="posts"></app-list-post>
+
+<!-- div style="width: 100%;">
+        <img class="banner-home" src="https://hdpicturehub.com/wp-content/uploads/2016/10/pretty-pictures-HD7.jpg" />
+      
+    </div -->
+    <div class="widewrapper main">
+        <div class="container">
+            <p class="text-center">Ficção | Crônica | Versos | Ação | Ficção | Crônica | Versos | Ação | Ficção | Crônica | Versos | Ação </p>
+            <div class="row">
+            <hr>
+            <div class="row">
+                <div class="col-1">
+                    <h2>
+                        <i class="fas fa-clock"></i>
+
+                    </h2>
+                </div>
+                <div class="col">
+                    <app-list-post [posts]="postsRecentes"></app-list-post>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-1">
+                    <h2>
+                        <i class="fas fa-fire"></i>
+                    </h2>
+                </div>
+
+                <div class="col">
+                    <app-list-post [posts]="postsRecentes"></app-list-post>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                        <span>
+                                <img alt="" src="https://scontent.fcgh11-1.fna.fbcdn.net/v/t1.0-9/11953141_10206357296045744_1957923640642159679_n.jpg?_nc_cat=0&oh=cb751e322a471d6a5f1878de17f278f9&oe=5B51B619"
+                                  class="avatar avatar-96 photo Avatar rounded-circle Transition" height="30" width="30">
+                              </span>
+                </div>
+
+                <div class="col">
+                    <app-list-post [posts]="postsRecentes"></app-list-post>
+                </div>
+            </div>
             <!-- aside class="col-md-4 blog-aside">
                   
                   <div class="aside-widget">

@@ -1,0 +1,32 @@
+h1 {
+    font-weight: 300;
+    color: #424142;
+    font-size: 8.4vh;
+    font-family: 'PT Serif', serif;
+}
+
+h2 {
+    color: #424142;
+    font-size: 30px;
+    position: relative;
+    font-weight: 300px;
+}
+p {
+    font-size: 24pt;
+    font-family: 'PT Serif', serif;
+
+}
+.img-profile {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  padding: 0px;
+  margin: 0px;
+}
+.faixa {
+    background-color: #404040;
+    color: #f2f2f2;
+    font-size: 16px;
+    min-height: 63px;
+}

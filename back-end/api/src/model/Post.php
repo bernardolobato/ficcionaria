@@ -18,6 +18,9 @@ class Post
     public $text;
 
     /** @ORM\Column(type="string") **/
+    public $teaser;
+
+    /** @ORM\Column(type="string") **/
     public $status;
 
 
@@ -50,6 +53,7 @@ class Post
         $post->id =  isset($args['id']) ? $args['id'] : null;
         $post->title = $args['title'];
         $post->text = $args['text'];
+        $post->teaser = $args['teaser'];
         $post->status = $args['status'];
         $post->created = new \DateTime();
         $post->modified = new \DateTime();

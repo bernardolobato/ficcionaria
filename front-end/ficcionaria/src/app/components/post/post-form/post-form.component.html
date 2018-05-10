@@ -1,0 +1,34 @@
+
+
+<div class="container" style="background-color: #404040; width: 100%; box-shadow: 2px 2px 2px grey; ">
+  <div class="container ">
+      <div class="col-md-12 col-md-offset-9">
+        <button type="submit" class="btn btn-link btn" (click)="saveAndPublish()">Salvar</button>
+        <button type="submit" class="btn btn-dark " (click)="saveAndPublish()">Publicar</button>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row blog-main">
+    <div style="width: 100%; height: 200px; background-color: #02ba96; position: relative">
+      <button class="btn btn-info" style="position: absolute; bottom:0px">Adicione uma capa...</button>
+    </div>
+
+    <div class="col-md-12 box">
+
+      <form style="padding-top: 50px;">
+        <div class="form-group">
+          <input type="text" class="form-control titulo" placeHolder="Título" id="exampleFormControlInput1" name="title" [(ngModel)]="post.title">
+        </div>
+
+
+        <div class="form-group">
+          <textarea class="form-control texto-post" [(ngModel)]="post.text" name="text" placeholder="Era uma vez..."></textarea>
+        </div>
+
+
+      </form>
+    </div>
+
+  </div>
+</div>

@@ -32,12 +32,29 @@ export class PostService {
       }).catch((erro) => Observable.throw(erro.json().errors));
   }
 
+  public save(post) {
+    if (post.id) {
+      return this.http.put('http://api-ficcionaria/posts', post).map((res) => {
+        const postsResponse = res.json();
+        const post = this.convertResponseToPost(postsResponse);
+        return post;
+      }).catch((erro) => Observable.throw(erro.json().errors));
+    } else {
+      return this.http.post('http://api-ficcionaria/posts', post).map((res) => {
+        /*const postsResponse = res.json();
+        const post = this.convertResponseToPost(postsResponse);
+        return post;*/
+      }).catch((erro) => Observable.throw(erro.json().errors));
+    }
+  }
+
   private convertResponseToPost(element) {
     let p = new Post();
     p.id = element.id;
     p.profile = element.profile;
     p.status = element.status;
     p.text = element.text;
+    p.teaser = element.teaser;
     p.title = element.title;
     p.created = element.created;
     p.modified = element.modified;

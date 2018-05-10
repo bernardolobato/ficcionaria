@@ -1,11 +1,30 @@
-<header>
+<header class="">
+
+    <div class="nav">
+
+        <a [routerLink]="['/']" id="logo" class="col-sm-11">
+            <h1 style="font-weight: 300">
+                <i class="fa fa-bars"></i> ficcionaria</h1>
+        </a>
+<div class="col-sm align-middle">
+
+    <button [routerLink]="['/post/novo']" type="button" class="btn btn-dark" style="margin-top: 7px;">
+        <i class="fas fa-plus" aria-hidden="true"></i>
+    </button>
+</div>
+
+    </div>
+</header>
+
+<div class="container">
+<!-- header>
   <div class="widewrapper masthead">
     <div class="container">
       <a [routerLink]="['/']" id="logo">
           <i class="fas fa-align-justify"></i>
           Ficcionaria
                 <!--Use the following line instead if you want to use an image logo-->
-                <!--<img src="img/tales-logo.png" alt="Tales Blog">-->
+<!--<img src="img/tales-logo.png" alt="Tales Blog">>
             </a>
 
             <div id="mobile-nav-toggle" class="pull-right">
@@ -19,12 +38,19 @@
                     <ul class="nav nav-pills navbar-nav">
                       
                         <li class="dropdown active">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                Blog 
+                            <a class="dropdown-toggle" data-toggle="dropdown" [routerLink]="['/post/novo']">
+                                <i class="fas fa-plus" aria-hidden="true"></i>
+                                 Novo 
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="index.html">Blog</a></li>
+
+                                    
+                                <li><a href="index.html">
+                                        <i class="fas fa-plus" aria-hidden="true"></i>
+                                            Blog
+                                        </a>
+                                </li>
                                 <li><a href="blog-detail.html">Blog Detail</a></li>
                             </ul>
                         </li>
@@ -57,4 +83,4 @@
             </div>
         </div>
     </div>
-</header>
+</header -->

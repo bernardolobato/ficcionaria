@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from '../../../services/post.service';
 
 @Component({
   selector: 'app-view-profile',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-profile.component.css']
 })
 export class ViewProfileComponent implements OnInit {
-
-  constructor() { }
+  posts;
+  model;
+  constructor(private service: PostService) { }
 
   ngOnInit() {
+   this.service.list().subscribe((posts) => {
+     this.posts = posts;
+   });
   }
 
 }

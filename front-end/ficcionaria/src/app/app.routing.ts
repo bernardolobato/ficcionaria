@@ -8,9 +8,9 @@ import { ListProfileComponent } from './components/profile/list-profile/list-pro
 
 
 const routes: Routes = [
-  {path: 'save-post', component: SavePostComponent},
+  {path: 'post/novo', component: SavePostComponent},
   {path: 'post/visualizar/:id', component: ViewPostComponent},
-  {path: 'view-profile', component: ViewProfileComponent},
+  {path: 'perfil/visualizar/:id', component: ViewProfileComponent},
     {path: 'list-profile', component: ListProfileComponent},
 
   {path: '', component: HomeComponent},

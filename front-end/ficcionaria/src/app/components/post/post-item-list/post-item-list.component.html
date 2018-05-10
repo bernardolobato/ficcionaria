@@ -1,19 +1,35 @@
-<article class=" blog-teaser">
+<article class=" blog-teaser box">
   <header>
     <!-- img src="img/cat.png" alt="A Cat" -->
-    <h3>
 
-        <a [routerLink]="['/post/visualizar', post.id]">
-          {{post.title}}
-        </a>
+    <div style="width: 100%;">
+      <img class="objectImage" src="https://a.wattpad.com/cover/52484811-352-k455984.jpg" />
+    </div>
+    <h3 class="col-md-12" style="font-size: 30px;">
+      <a [routerLink]="['/post/visualizar', post.id]">
+        {{post.title}}
+      </a>
     </h3>
-    <span class="meta">{{post.postedAt.date}}</span>
-    <hr>
   </header>
-  <div class="body">
-    {{post.text}} </div>
+  <div class="body col-md-12">
+    {{post.teaser}}...</div>
+  <footer>
+    <p class="col-md-9" style="padding-top: 15px">
+      <span *ngIf="!hideProfile">
+        <img alt="" src="https://scontent.fcgh11-1.fna.fbcdn.net/v/t1.0-9/11953141_10206357296045744_1957923640642159679_n.jpg?_nc_cat=0&oh=cb751e322a471d6a5f1878de17f278f9&oe=5B51B619"
+          class="avatar avatar-96 photo Avatar img-circle Transition" height="30" width="30">
+        <a [routerLink]="['/perfil/visualizar', post.profile.id]"> Bernardo Lobato</a> |
+      </span>
+       Postado em {{post.postedAt.date | date: 'dd/MM/yyyy'}}
+    </p>
+    <p class="col-md-3" style="padding-top: 15px">
+
+      <i class="fa fa-heart"> 500</i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-google-plus-g"></i>
+      <i class="fab fa-facebook-f"></i>
+    </p>
+  </footer>
   <div class="clearfix">
-    
-    <a [routerLink]="['/post/visualizar', post.id]" class="btn btn-tales-one">Read more</a>
   </div>
 </article>

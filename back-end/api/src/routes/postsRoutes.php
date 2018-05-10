@@ -8,6 +8,7 @@ use Exception\AppException;
 $app->group('/posts', function () {
     $this->get('', function ($request, $response, $args) {
         $params = $request->getQueryParams();
+        $params['textSubstring'] = 50;
         try {
             PostValidator::validParametersSearchList($params);
             $postBusiness = $this->get('postBusiness');
@@ -25,6 +26,7 @@ $app->group('/posts', function () {
             PostValidator::isValidId($id);
             $postBusiness = $this->get('postBusiness');
             $data = $postBusiness->get($id);
+            $data->text = nl2br($data->text);
             if (isset($data->profile)) {
                 $data->profile->name;
             }
@@ -40,7 +42,9 @@ $app->group('/posts', function () {
     $this->post('', function ($request, $response, $args) {
         try {
             $postBusiness = $this->get('postBusiness');
-            $post = Post::fromArray($request->getParsedBody());
+            $post = $request->getParsedBody();
+            $post['profile']['id'] = 1;
+            $post = Post::fromArray($post);
             PostValidator::addPostValidator($post);
             $data = $postBusiness->save($post);
             return $response->withJson($data);

@@ -8,6 +8,7 @@ import { Post } from '../../../model/post';
 })
 export class PostItemListComponent implements OnInit {
   @Input() post : Post;
+  @Input() hideProfile : false;
   constructor() { }
 
   ngOnInit() {

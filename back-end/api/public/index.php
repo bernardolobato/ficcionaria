@@ -53,6 +53,19 @@ require __DIR__ . '/../src/middleware.php';
 require __DIR__ . '/../src/routes.php';
 //print_r($app);
 
+// This is the middleware
+// It will add the Access-Control-Allow-Methods header to every request
+
+$app->options('/{routes:.+}', function ($request, $response, $args) {
+    return $response;
+});
+
+$app->add(function ($req, $res, $next) {
+    $response = $next($req, $res);
+    return $response
+            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+});
 
 // Run app
 $app->run();

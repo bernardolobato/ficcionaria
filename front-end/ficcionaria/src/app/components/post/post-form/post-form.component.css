@@ -1,0 +1,21 @@
+.titulo {
+    font-size: 8.4vh;
+    font-family: Roboto;
+    height:  9vh;
+    text-align: center;
+    box-shadow: none;
+    border: none;
+}
+
+.texto-post {
+    box-shadow: none;
+    border: none;
+    font-family: Roboto;
+    font-size: 16pt;
+    height: 500px;
+    width: 100%;
+}
+
+header .nav{
+    box-shadow: none;
+}

@@ -20,7 +20,14 @@ class PostRepository extends \Repository\AppRepository
     }
 
     public static function search($params) {
-        $query = PostRepository::getInstance()->createQueryBuilder('p');
+        $query = PostRepository::getManager()->createQueryBuilder();
+        $query->select(['partial p.{id, title, teaser, status, postedAt, created, modified}','pr']);
+        $query->from('Model\Post', 'p');
+        $query->leftjoin('p.profile', 'pr');
+       // $query->addSelect('pr');
+        if (isset( $params['textSubstring'])) {
+        }
+
         if (isset($params['shouldUseExactSearch']) && $params['shouldUseExactSearch'])  {
             $query->andWhere('p.title = :title');
             $query->setParameter('title', $params['title']);
@@ -50,6 +57,10 @@ class PostRepository extends \Repository\AppRepository
         if (isset($params['offset'])) {
             $query->setFirstResult($params['offset']);
         }
+        $query->orderBy('p.id', 'DESC');
+        print_r(json_encode($query->getQuery()->getResult()));
+        die;
+
         return $query->getQuery()->getResult();
     }
 }
